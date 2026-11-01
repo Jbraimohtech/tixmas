@@ -17,7 +17,11 @@ import BrunoImage from "../assets/images/LOSANGELBTS.jpeg";
 import MoreOptions from "./MoreOptions";
 import SeatMap from "./SeatMap";
 import TransferSheet from "./TransferSheet";
-import { DEFAULT_TICKET_EVENT, loadTicketEvent, TicketEvent } from "@/lib/ticketStorage";
+import {
+  DEFAULT_TICKET_EVENT,
+  loadTicketEvent,
+  TicketEvent,
+} from "@/lib/ticketStorage";
 
 const EventTickets: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"tickets" | "extras">("tickets");
@@ -87,9 +91,7 @@ const EventTickets: React.FC = () => {
             </h1>
 
             <div className="flex items-center justify-between">
-              <p className="text-[0.8rem] text-[#ddd]">
-                {event.venue}
-              </p>
+              <p className="text-[0.8rem] text-[#ddd]">{event.venue}</p>
 
               <div className="flex items-center gap-[6px] text-[1rem] font-semibold text-[#ddd]">
                 {/* <Ticket size={18} color="white" /> */}
@@ -100,7 +102,9 @@ const EventTickets: React.FC = () => {
                   height={23}
                   className="mr-[-5px] -mt-[5px] h-[23px] w-[23px] object-cover"
                 />
-                <p className="text-[1.2rem] font-bold text-white">x{tickets.length}</p>
+                <p className="text-[1.2rem] font-bold text-white">
+                  x{tickets.length}
+                </p>
               </div>
             </div>
           </div>
@@ -152,7 +156,9 @@ const EventTickets: React.FC = () => {
         <div className="flex flex-col items-start justify-between">
           <h2 className="text-[14px] font-bold">Order #{event.orderNumber}</h2>
 
-          <p className="mt-[8px] text-[12px] text-[#666]">x{tickets.length} Tickets</p>
+          <p className="mt-[8px] text-[12px] text-[#666]">
+            x{tickets.length} Tickets
+          </p>
         </div>
 
         <button
@@ -238,7 +244,7 @@ const EventTickets: React.FC = () => {
           <span>Sell</span>
         </button>
       </div>
-      <MoreOptions mapImage={MapImg.src} />
+      {/* <MoreOptions mapImage={MapImg.src} /> */}
 
       <SeatMap />
 
