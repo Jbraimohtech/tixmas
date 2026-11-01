@@ -3,9 +3,9 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import MapImg from "../assets/images/btsmap.jpeg";
-import DobTicketImg from "../assets/images/dob-ticket.jpeg";
-import OneTicketImg from "../assets/images/one-tic.jpeg";
+import MapImg from "@/assets/images/btsmap.jpeg";
+import DobTicketImg from "@/assets/images/dob-ticket.jpeg";
+import OneTicketImg from "@/assets/images/one-tic.jpeg";
 import {
   // ArrowLeft,
   MoreVertical,
@@ -13,10 +13,10 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-import BrunoImage from "../assets/images/LOSANGELBTS.jpeg";
-import MoreOptions from "./MoreOptions";
-import SeatMap from "./SeatMap";
-import TransferSheet from "./TransferSheet";
+import BrunoImage from "@/assets/images/LOSANGELBTS.jpeg";
+import MoreOptions from "@/components/MoreOptions";
+import SeatMap from "@/components/SeatMap";
+import TransferSheet from "@/components/TransferSheet";
 import {
   DEFAULT_TICKET_EVENT,
   loadTicketEvent,
@@ -33,6 +33,7 @@ const EventTickets: React.FC = () => {
     const frame = window.requestAnimationFrame(() => {
       setEvent(loadTicketEvent() ?? DEFAULT_TICKET_EVENT);
     });
+
     return () => window.cancelAnimationFrame(frame);
   }, []);
 
@@ -244,7 +245,7 @@ const EventTickets: React.FC = () => {
           <span>Sell</span>
         </button>
       </div>
-      {/* <MoreOptions mapImage={MapImg.src} /> */}
+      <MoreOptions mapImage={MapImg.src} />
 
       <SeatMap />
 
