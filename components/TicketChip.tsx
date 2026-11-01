@@ -28,21 +28,20 @@ const TicketChip: React.FC<TicketChipProps> = ({
       {/* Selection Circle */}
       <div className="flex h-[70px] w-full items-center justify-center bg-white max-[430px]:h-auto max-[430px]:flex-1">
         <div
-          className={`flex items-center justify-center rounded-full border-[3px] border-[#d6d6d6] bg-white transition-all duration-200 max-[375px]:size-[30px] max-[430px]:size-[22px] ${
+          className={`relative z-[1] flex size-[34px] shrink-0 items-center justify-center rounded-full border-[3px] border-[#d6d6d6] bg-0d5bff transition-all duration-200 ${
             selected
               ? "scale-[1.08] border-[#0d5bff] bg-[#0d5bff] shadow-[0_6px_16px_rgba(13,91,255,.35)]"
-              : "size-[34px]"
+              : ""
           }`}
         >
-          {selected && (
-            selectionNumber ? (
+          {selected &&
+            (selectionNumber ? (
               <span className="text-[14px] font-bold text-white">
                 {selectionNumber}
               </span>
             ) : (
               <Check size={16} strokeWidth={3} color="#fff" />
-            )
-          )}
+            ))}
         </div>
       </div>
     </button>
