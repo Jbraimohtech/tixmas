@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import WhiteTicketImg from "../assets/images/white-ticket.jpeg";
+import WhiteTicketImg from "@/assets/images/white-ticket.jpeg";
 
 import { ChevronRight, X } from "lucide-react";
 
 import TicketChip from "./TicketChip";
-import TransferRecipientSheet from "./TransferRecipientSheet";
-import RecipientDetailsSheet from "./RecipientDetailsSheet";
+import TransferRecipientSheet from "@/components/TransferRecipientSheet";
+import RecipientDetailsSheet from "@/components/RecipientDetailsSheet";
 
 export interface TransferTicket {
   id: number;
